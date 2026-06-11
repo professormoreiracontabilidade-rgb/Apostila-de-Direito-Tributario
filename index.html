@@ -30,8 +30,8 @@ table{width:100%;border-collapse:collapse;margin:8px 0} th{background:var(--azul
 @media print{
   @page{
     size:A4;
-    margin:18mm 15mm 22mm 15mm;
-    @bottom-center{content:"Curso de Contabilidade Professor Moreira • WhatsApp: (61) 98532-3574 • Página " counter(page);font-size:9.5pt;color:#475569;}
+    margin:20mm 15mm 24mm 15mm;
+    @bottom-center{content:"Curso de Contabilidade Professor Moreira - whatsapp (61) 985323574 - Página " counter(page);font-size:9.5pt;color:#475569;}
   }
   body{background:white;-webkit-print-color-adjust:exact;print-color-adjust:exact;counter-reset:page;}
   .topbar,.lock,.controls,.btn{display:none!important}
@@ -51,10 +51,40 @@ table{width:100%;border-collapse:collapse;margin:8px 0} th{background:var(--azul
 
 .note{background:#fff7ed;border:1px solid #fed7aa;border-radius:10px;padding:8px 10px;font-weight:800;color:#7c2d12}
 .responder{margin-top:10px;border:1px dashed #9ca3af;border-radius:10px;padding:10px;background:#fff;font-weight:800;color:#111827}
+
+
+/* AJUSTES FINAIS - PADRÃO A4 PROFESSOR MOREIRA */
+@media print{
+  html, body{margin:0!important;padding:0!important;background:#fff!important;}
+  .topbar,.lock,.controls,.btn{display:none!important;}
+  .wrap{width:auto!important;max-width:none!important;margin:0!important;box-shadow:none!important;background:#fff!important;}
+  .sheet{padding:0!important;min-height:auto!important;}
+  section{break-inside:avoid-page!important;page-break-inside:avoid!important;margin:0 0 10mm 0!important;}
+  article,.card,.box,.qa,.question,.flash,table,tr,li,h1,h2,h3,h4,.onepage,.mental{
+    break-inside:avoid!important;page-break-inside:avoid!important;
+  }
+  h1,h2,h3,h4{break-after:avoid!important;page-break-after:avoid!important;}
+  p,li{orphans:3;widows:3;}
+  .cover{min-height:240mm!important;page-break-after:always!important;break-after:page!important;}
+  #sumario{page-break-after:always!important;break-after:page!important;}
+  #vespera{page-break-after:always!important;break-after:page!important;}
+  .footer{display:none!important;}
+  .print-footer{
+    display:block!important;
+    position:fixed!important;
+    left:0!important;right:0!important;bottom:-18mm!important;
+    text-align:center!important;
+    font-size:9.5pt!important;
+    color:#475569!important;
+    border-top:.3pt solid #cbd5e1!important;
+    padding-top:2mm!important;
+    background:white!important;
+  }
+}
 </style>
 </head>
 <body>
-<div class="print-footer">Curso de Contabilidade Professor Moreira • WhatsApp: (61) 98532-3574 • Página <span class="pagenum"></span></div>
+<div class="print-footer">Curso de Contabilidade Professor Moreira - whatsapp (61) 985323574 - Página <span class="pagenum"></span></div>
 <div id="lock" class="lock"><div class="lock-card"><span class="badge">Professor Moreira Premium</span><h1>Apostila A4 de Direito Tributário</h1><p>Digite o nome do aluno e envie para o WhatsApp do Professor Moreira para liberar a apostila.</p><input id="studentName" class="input" placeholder="Digite seu nome completo"><button class="btn green full" onclick="sendName()">Enviar nome e liberar</button><button class="btn light full" onclick="unlockOnly()">Liberar sem enviar agora</button><p><b>Curso de Contabilidade Professor Moreira</b> • WhatsApp: (61) 98532-3574</p></div></div>
 <header class="topbar"><div class="row"><div><h2>Curso de Contabilidade Professor Moreira</h2><p>Apostila Premium A4 • Direito Tributário FGV/CFC • WhatsApp: (61) 98532-3574</p></div><div class="controls"><button class="btn gold" onclick="window.print()">Gerar PDF / Imprimir</button></div></div></header>
 <div class="wrap"><main class="sheet">
